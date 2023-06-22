@@ -34,6 +34,22 @@ def num_check(question):
 
         except ValueError:
             print("Please enter an integer.")
+
+#price calc
+def calc_ticket_price(var_age):
+
+    if var_age <16:
+        price = 7.5
+
+    elif var_age < 65:
+        price = 10.5
+
+    else:
+        price = 6.5
+
+    return price
+
+
 #main
 
 #vars
@@ -64,6 +80,10 @@ while tickets_sold < MAX_TICKETS:
     else:
         print("That looks like a typo, please try again.")
         continue
+
+    #calc ticket cost
+    ticket_cost = calc_ticket_price(age)
+    print("Age: {}, Ticket Price: ${:.2f}".format(age, ticket_cost))
 
     tickets_sold += 1
 #out
